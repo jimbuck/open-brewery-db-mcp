@@ -20,12 +20,16 @@
 	"author": "Jim Buck <jim@jimbuck.io>",
 	"license": "MIT",
 	"dependencies": {
-		"@modelcontextprotocol/sdk": "^1.0.0"
+		"@modelcontextprotocol/sdk": "^1.0.0",
+		"zod": "^3.25.51",
+		"zod-to-json-schema": "^3.24.5"
 	},
 	"devDependencies": {
 		"@types/node": "^20.0.0",
+		"@vitest/ui": "^3.2.2",
 		"tsx": "^4.0.0",
-		"typescript": "^5.0.0"
+		"typescript": "^5.0.0",
+		"vitest": "^3.2.2"
 	},
 	"engines": {
 		"node": ">=18"
