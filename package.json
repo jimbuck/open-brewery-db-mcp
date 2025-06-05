@@ -1,5 +1,5 @@
 {
-	"name": "open-brewery-db-mcp",
+	"name": "@jimbuck/open-brewery-db-mcp",
 	"version": "1.0.0",
 	"description": "An MCP server for Open Brewery DB service",
 	"main": "dist/index.js",
