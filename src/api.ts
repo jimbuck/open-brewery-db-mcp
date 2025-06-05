@@ -1,6 +1,5 @@
 import { BREWERY_TYPE_DETAILS } from './consts.js';
 import { Brewery, BrewerySchema, GetBreweryByIdSchema, GetRandomBrewerySchema, SearchBreweriesSchema } from './types.js';
-import { formatBreweries, formatBrewery } from './utils.js';
 
 
 export class OpenBreweryDBApi {
