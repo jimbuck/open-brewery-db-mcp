@@ -1,0 +1,11 @@
+{
+	"servers": {
+		"openBreweryDB": {
+			"type": "stdio",
+			"command": "node",
+			"args": [
+				"${workspaceFolder}\\dist\\index.js"
+			]
+		}
+	}
+}
