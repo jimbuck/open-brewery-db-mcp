@@ -68,7 +68,7 @@ export type GetBreweryByIdInput = z.infer<typeof GetBreweryByIdSchema>;
  * Get random brewery input schema
  */
 export const GetRandomBrewerySchema = z.object({
-	size: z.number().min(1).max(10).optional().describe("Number of random breweries to return (default: 1, max: 10)"),
+	size: z.number().min(1).max(10).optional().default(1).describe("Number of random breweries to return (default: 1, max: 10)"),
 });
 
 export type GetRandomBreweryInput = z.infer<typeof GetRandomBrewerySchema>;

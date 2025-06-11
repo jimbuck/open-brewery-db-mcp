@@ -15,14 +15,18 @@ export function formatBrewery(brewery: Brewery): string {
 		brewery.country,
 	].filter(Boolean).join(", ");
 
-	return `🍺 **${brewery.name}**
-**Type:** ${brewery.brewery_type}
-**ID:** ${brewery.id}
-${address ? `**Address:** ${address}` : ""}
-${location ? `**Location:** ${location}` : ""}
-${brewery.phone ? `**Phone:** ${brewery.phone}` : ""}
-${brewery.website_url ? `**Website:** ${brewery.website_url}` : ""}
-${brewery.longitude && brewery.latitude ? `**Coordinates:** ${brewery.latitude}, ${brewery.longitude}` : ""}`;
+	const lines = [
+		`🍺 **${brewery.name}**`,
+		`**Type:** ${brewery.brewery_type}`,
+		`**ID:** ${brewery.id}`,
+		address ? `**Address:** ${address}` : null,
+		location ? `**Location:** ${location}` : null,
+		brewery.phone ? `**Phone:** ${brewery.phone}` : null,
+		brewery.website_url ? `**Website:** ${brewery.website_url}` : null,
+		brewery.longitude && brewery.latitude ? `**Coordinates:** ${brewery.latitude}, ${brewery.longitude}` : null
+	].filter(Boolean);
+
+	return lines.join('\n');
 }
 
 export function formatBreweries(breweries: Brewery[]): string {
@@ -30,6 +34,6 @@ export function formatBreweries(breweries: Brewery[]): string {
 		return "No breweries found.";
 	}
 
-	return `Found ${breweries.length} brewery(ies):\n\n` +
+	return `Found ${breweries.length} brewer${breweries.length > 1 ? 'ies' : 'y'}:\n\n` +
 		breweries.map(brewery => formatBrewery(brewery)).join("\n\n---\n\n");
 }
