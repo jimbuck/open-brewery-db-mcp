@@ -2,6 +2,19 @@
 
 A [Model Context Protocol (MCP)](https://modelcontextprotocol.io) server that provides access to the [Open Brewery DB](https://www.openbrewerydb.org/) API. This server enables AI assistants and other MCP clients to search for breweries, get detailed brewery information, and explore brewery data from around the world.
 
+## Quick Start
+
+Want to try it out immediately? 
+
+```bash
+git clone https://github.com/your-username/open-brewery-db-mcp.git
+cd open-brewery-db-mcp
+npm install
+npm run dev
+```
+
+This will start the server with the **MCP Inspector** - a web-based interface for testing and exploring all the brewery tools interactively!
+
 ## About Open Brewery DB
 
 [Open Brewery DB](https://www.openbrewerydb.org/) is a free and open-source API that provides comprehensive information about breweries worldwide. The database includes:
@@ -84,13 +97,21 @@ npm start
 
 ### Development
 
-For development with auto-reload:
+For development with the **MCP Inspector** (recommended):
 
 ```bash
 npm run dev
 ```
 
-To watch for changes and rebuild:
+This command starts the server with the [MCP Inspector](https://github.com/modelcontextprotocol/inspector), which provides:
+- 🔍 **Interactive testing** of all MCP tools
+- 📊 **Real-time debugging** of server responses  
+- 🎯 **Visual tool exploration** with a web-based interface
+- 🚀 **Instant feedback** without needing to configure a full MCP client
+
+The inspector will automatically open in your browser, allowing you to test brewery searches, explore random breweries, and validate all functionality in real-time.
+
+To watch for changes and rebuild (production mode):
 
 ```bash
 npm run watch
