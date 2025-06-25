@@ -40,7 +40,7 @@ export default defineConfig([{
     'max-len': 'off',
     'no-trailing-spaces': 'warn',
     'key-spacing': ['warn', { 'beforeColon': false, 'afterColon': true, 'mode': 'minimum' }],
-    'semi': ['warn'],
+    'semi': ['warn', 'always'],
     'comma-dangle': ['warn', 'always-multiline'],
     'arrow-parens': ['warn', 'as-needed'],
     'quotes': ['error', 'single', { 'avoidEscape': true, 'allowTemplateLiterals': true }],
