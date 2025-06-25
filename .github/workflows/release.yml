@@ -7,7 +7,7 @@ on:
 
 jobs:
   bump-version:
-    name: 'Bump Version on main'
+    name: 'Bump Version'
     runs-on: ubuntu-latest
     if: ${{ !startsWith(github.ref, 'refs/tags/v') }}
 
@@ -35,7 +35,7 @@ jobs:
           NEW_TAG: ${{ steps.version-bump.outputs.newTag }}
         run: echo "new tag $NEW_TAG"
   create-release:
-    name: 'Bump Version on main'
+    name: 'Create Release'
     runs-on: ubuntu-latest
     if: ${{ startsWith(github.ref, 'refs/tags/v') }}
     steps:
