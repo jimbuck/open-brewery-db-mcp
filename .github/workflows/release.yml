@@ -9,6 +9,9 @@ jobs:
   bump-version-and-publish:
     name: 'Bump Version and Publish'
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
     steps:
       - name: 'Checkout source code'
         uses: 'actions/checkout@v4'
