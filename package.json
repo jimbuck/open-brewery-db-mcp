@@ -20,6 +20,10 @@
 		"api"
 	],
 	"author": "Jim Buck <jim@jimbuck.io>",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/jimbuck/open-brewery-db-mcp"
+	},
 	"license": "MIT",
 	"publishConfig": {
 		"access": "public"
