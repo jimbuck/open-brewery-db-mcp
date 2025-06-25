@@ -9,7 +9,7 @@
 		"start": "node dist/index.js",
 		"dev": "npx @modelcontextprotocol/inspector tsx src/index.ts",
 		"watch": "tsc --watch",
-		"test": "vitest --run",
+		"test": "vitest --run --slowTestThreshold 1500",
 		"lint": "eslint .",
 		"lint:fix": "eslint . --fix"
 	},
