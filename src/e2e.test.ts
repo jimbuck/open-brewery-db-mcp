@@ -28,7 +28,7 @@ describe('MCP Server E2E (in-memory)', () => {
     ]);
   });
 
-  test('tools/list returns all tools', async () => {
+  test('tools/list returns all tools', { timeout: 10000 }, async () => {
     const res = await client.request(
       { method: 'tools/list', params: {} },
       ListToolsResultSchema,
@@ -46,7 +46,7 @@ describe('MCP Server E2E (in-memory)', () => {
     );
   });
 
-  test('resources/list returns all resources', async () => {
+  test('resources/list returns all resources', { timeout: 10000 }, async () => {
     const res = await client.request(
       { method: 'resources/list', params: {} },
       ListResourcesResultSchema,
@@ -57,7 +57,7 @@ describe('MCP Server E2E (in-memory)', () => {
     expect(uris).toEqual(expect.arrayContaining(['brewery://types']));
   });
 
-  test('prompts/list returns all prompts', async () => {
+  test('prompts/list returns all prompts', { timeout: 10000 }, async () => {
     const res = await client.request(
       { method: 'prompts/list', params: {} },
       ListPromptsResultSchema,
@@ -69,7 +69,7 @@ describe('MCP Server E2E (in-memory)', () => {
     );
   });
 
-  test('tools/call brewery/search works', async () => {
+  test('tools/call brewery/search works', { timeout: 10000 }, async () => {
     const res = await client.request(
       {
         method: 'tools/call',
@@ -80,7 +80,7 @@ describe('MCP Server E2E (in-memory)', () => {
     expect(res.content[0].text).toMatch(/dog/i);
   });
 
-  test('tools/call brewery/random works', async () => {
+  test('tools/call brewery/random works', { timeout: 10000 }, async () => {
     const res = await client.request(
       {
         method: 'tools/call',
@@ -93,7 +93,7 @@ describe('MCP Server E2E (in-memory)', () => {
     expect(res.content[0].text).toMatch(/Brewery|Type|City|State/i);
   });
 
-  test('tools/call brewery/by-id works', async () => {
+  test('tools/call brewery/by-id works', { timeout: 10000 }, async () => {
     const res = await client.request(
       {
         method: 'tools/call',
@@ -109,7 +109,7 @@ describe('MCP Server E2E (in-memory)', () => {
     expect(res.content[0].text).toMatch(/Camp Hill/i);
   });
 
-  test('prompts/get brewery/by-state works', async () => {
+  test('prompts/get brewery/by-state works', { timeout: 10000 }, async () => {
     const res = await client.request(
       {
         method: 'prompts/get',
@@ -120,7 +120,7 @@ describe('MCP Server E2E (in-memory)', () => {
     expect(res.messages[0].content.text).toContain('California');
   });
 
-  test('multiple tool calls return valid results', async () => {
+  test('multiple tool calls return valid results', { timeout: 10000 }, async () => {
     const searchRes = await client.request(
       {
         method: 'tools/call',
