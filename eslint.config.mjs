@@ -45,7 +45,7 @@ export default defineConfig([{
     'arrow-parens': ['warn', 'as-needed'],
     'quotes': ['error', 'single', { 'avoidEscape': true, 'allowTemplateLiterals': true }],
     'func-style': ['warn', 'declaration'],
-    'eqeqeq': ['warn'],
+    'eqeqeq': ['error'],
     'indent': ['warn', 2, { 'SwitchCase': 1 }],
     '@typescript-eslint/explicit-member-accessibility': ['error', { 'accessibility': 'explicit', 'overrides': { 'constructors': 'off' } }],
     '@typescript-eslint/no-non-null-assertion': ['off'],
