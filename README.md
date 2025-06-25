@@ -2,9 +2,27 @@
 
 A [Model Context Protocol (MCP)](https://modelcontextprotocol.io) server that provides access to the [Open Brewery DB](https://www.openbrewerydb.org/) API. This server enables AI assistants and other MCP clients to search for breweries, get detailed brewery information, and explore brewery data from around the world.
 
+## Installation
+
+### From npm (Recommended)
+
+Install the package globally or as a dependency:
+
+```bash
+npm install -g @jimbuck/open-brewery-db-mcp
+# or for local usage
+npm install @jimbuck/open-brewery-db-mcp
+```
+
 ## Quick Start
 
-Want to try it out immediately? 
+### Run with npx (no clone required)
+
+```bash
+npx open-brewery-db-mcp
+```
+
+### Or clone and run locally
 
 ```bash
 git clone https://github.com/your-username/open-brewery-db-mcp.git
@@ -14,6 +32,47 @@ npm run dev
 ```
 
 This will start the server with the **MCP Inspector** - a web-based interface for testing and exploring all the brewery tools interactively!
+
+### As an MCP Server (for MCP clients)
+
+The server communicates via stdio and follows the MCP protocol. To use it with an MCP client:
+
+```bash
+npm start
+# or
+node dist/index.js
+```
+
+### MCP Client Configuration Example
+
+To connect this server to an MCP client like Claude Desktop, add the following configuration:
+
+**macOS**: `~/Library/Application\ Support/Claude/claude_desktop_config.json`
+**Windows**: `%APPDATA%/Claude/claude_desktop_config.json`
+
+```json
+{
+  "mcpServers": {
+    "open-brewery-db": {
+      "command": "npx",
+      "args": ["@jimbuck/open-brewery-db-mcp"]
+    }
+  }
+}
+```
+
+Or, if installed locally or cloned:
+
+```json
+{
+  "mcpServers": {
+    "open-brewery-db": {
+      "command": "node",
+      "args": ["/path/to/open-brewery-db-mcp/dist/index.js"]
+    }
+  }
+}
+```
 
 ## About Open Brewery DB
 
@@ -60,40 +119,7 @@ Discover new breweries by getting random brewery information. You can specify ho
 ### 📋 `list_brewery_types`
 Get a complete list of all available brewery types with descriptions.
 
-## Installation
-
-### Prerequisites
-
-- Node.js 18 or higher
-- npm or yarn
-
-### Setup
-
-1. Clone this repository:
-```bash
-git clone https://github.com/your-username/open-brewery-db-mcp.git
-cd open-brewery-db-mcp
-```
-
-2. Install dependencies:
-```bash
-npm install
-```
-
-3. Build the project:
-```bash
-npm run build
-```
-
 ## Usage
-
-### As an MCP Server
-
-The server communicates via stdio and follows the MCP protocol. To use it with an MCP client:
-
-```bash
-npm start
-```
 
 ### Development
 
@@ -115,28 +141,6 @@ To watch for changes and rebuild (production mode):
 
 ```bash
 npm run watch
-```
-
-### Configuration for MCP Clients
-
-To connect this server to an MCP client like Claude Desktop, add the following configuration:
-
-#### Claude Desktop Configuration
-
-Add to your Claude Desktop configuration file:
-
-**macOS**: `~/Library/Application\ Support/Claude/claude_desktop_config.json`
-**Windows**: `%APPDATA%/Claude/claude_desktop_config.json`
-
-```json
-{
-  "mcpServers": {
-    "open-brewery-db": {
-      "command": "node",
-      "args": ["/path/to/open-brewery-db-mcp/dist/index.js"]
-    }
-  }
-}
 ```
 
 ## API Examples
