@@ -1,6 +1,13 @@
 import { Brewery } from './types.js';
 
 
+/**
+ * Formats a brewery object into a readable multi-line string with key details.
+ *
+ * Returns 'Unknown brewery!' if the brewery lacks a name or ID. Includes the brewery's name, type, ID, and, if available, address, location, phone, website, and coordinates.
+ *
+ * @returns A formatted string representing the brewery's details
+ */
 export function formatBrewery(brewery: Brewery): string {
   if (!brewery?.name || !brewery?.id) {
     return 'Unknown brewery!';
@@ -33,6 +40,14 @@ export function formatBrewery(brewery: Brewery): string {
   return lines.join('\n');
 }
 
+/**
+ * Formats a list of breweries into a readable string.
+ *
+ * If the input array is empty or undefined, returns a message indicating no breweries were found. Otherwise, returns a string listing the number of breweries and their formatted details, separated by horizontal rules.
+ *
+ * @param breweries - The array of brewery objects to format
+ * @returns A formatted string representing the list of breweries
+ */
 export function formatBreweries(breweries: Brewery[]): string {
   if (!breweries || breweries.length === 0) {
     return 'No breweries found.';
