@@ -6,6 +6,13 @@ import { formatBreweries, formatBrewery } from './utils.js';
 import { GetPromptResult } from '@modelcontextprotocol/sdk/types.js';
 import z from 'zod';
 
+/**
+ * Creates and configures an MCP server instance for interacting with the Open Brewery DB API.
+ *
+ * Registers resources, tools, and prompts for listing brewery types, retrieving brewery details by ID, searching breweries, fetching random breweries, and generating prompts for state-based searches.
+ *
+ * @returns The configured MCP server instance.
+ */
 export function createServer({ openBreweryApi }: { openBreweryApi?: OpenBreweryDBApi } = {}): McpServer {
   // Create the MCP server
   const server = new McpServer({ name: 'open-brewery-db-mcp', version: '1.0.0' });
