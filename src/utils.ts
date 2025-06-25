@@ -2,6 +2,10 @@ import { Brewery } from './types.js';
 
 
 export function formatBrewery(brewery: Brewery): string {
+	if (!brewery?.name || !brewery?.id) {
+		return "Unknown brewery!";
+	}
+
 	const address = [
 		brewery.address_1,
 		brewery.address_2,
@@ -30,7 +34,7 @@ export function formatBrewery(brewery: Brewery): string {
 }
 
 export function formatBreweries(breweries: Brewery[]): string {
-	if (breweries.length === 0) {
+	if (!breweries || breweries.length === 0) {
 		return "No breweries found.";
 	}
 

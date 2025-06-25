@@ -45,7 +45,7 @@ export type Brewery = z.infer<typeof BrewerySchema>;
  * Search breweries input schema
  */
 export const SearchBreweriesSchema = z.object({
-	query: z.string().optional().describe("Search query (brewery name, city, etc.)"),
+	query: z.string().trim().optional().describe("Search query (brewery name, city, etc.)"),
 	by_city: z.string().optional().describe("Filter by city name"),
 	by_state: z.string().optional().describe("Filter by state (full name or abbreviation)"),
 	by_type: z.string().optional().describe("Filter by brewery type (micro, nano, regional, brewpub, large, planning, bar, contract, proprietor, closed)"),
@@ -59,7 +59,7 @@ export type SearchBreweriesInput = z.infer<typeof SearchBreweriesSchema>;
  * Get brewery by ID input schema
  */
 export const GetBreweryByIdSchema = z.object({
-	id: z.string().describe("Brewery ID"),
+	id: z.string().trim().nonempty().describe("Brewery ID"),
 });
 
 export type GetBreweryByIdInput = z.infer<typeof GetBreweryByIdSchema>;
