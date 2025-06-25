@@ -20,10 +20,3 @@ jobs:
         run: npm run lint
       - name: Run tests
         run: npm test
-      - name: Bump version (conventional commits)
-        uses: phips28/gh-action-bump-version@v10.1.1
-        with:
-          tag-prefix: 'v'
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        if: github.event.pull_request.merged == true

@@ -9,9 +9,9 @@
 		"start": "node dist/index.js",
 		"dev": "npx @modelcontextprotocol/inspector tsx src/index.ts",
 		"watch": "tsc --watch",
-		"test": "vitest --run",
-		"lint": "eslint .",
-		"lint:fix": "eslint . --fix"
+		"test": "vitest --run --slowTestThreshold 1500",
+		"lint": "eslint src",
+		"lint:fix": "eslint src --fix"
 	},
 	"keywords": [
 		"mcp",
