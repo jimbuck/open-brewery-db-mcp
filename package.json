@@ -10,8 +10,8 @@
 		"dev": "npx @modelcontextprotocol/inspector tsx src/index.ts",
 		"watch": "tsc --watch",
 		"test": "vitest --run --slowTestThreshold 1500",
-		"lint": "eslint .",
-		"lint:fix": "eslint . --fix"
+		"lint": "eslint src",
+		"lint:fix": "eslint src --fix"
 	},
 	"keywords": [
 		"mcp",
