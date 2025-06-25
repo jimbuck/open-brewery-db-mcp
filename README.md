@@ -219,9 +219,14 @@ Contributions are welcome! Please feel free to submit a Pull Request. For major 
 2. Create your feature branch (`git checkout -b feature/amazing-feature`)
 3. Make your changes
 4. Run tests: `npm test`
-5. Commit your changes (`git commit -m 'Add some amazing feature'`)
+5. Commit your changes (`git commit -m 'feat: Add some amazing feature'`)
 6. Push to the branch (`git push origin feature/amazing-feature`)
 7. Open a Pull Request
+
+### Brewery Data Contributions
+
+**Want to help improve the brewery data itself?**  
+Contributions to the brewery listings and data are welcome! Check out the [Open Brewery DB GitHub repository](https://github.com/openbrewerydb/openbrewerydb) to suggest changes, add new breweries, or help maintain the dataset.
 
 ## License
 
