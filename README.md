@@ -223,6 +223,8 @@ Contributions are welcome! Please feel free to submit a Pull Request. For major 
 6. Push to the branch (`git push origin feature/amazing-feature`)
 7. Open a Pull Request
 
+### Brewery Data Contributions
+
 **Want to help improve the brewery data itself?**  
 Contributions to the brewery listings and data are welcome! Check out the [Open Brewery DB GitHub repository](https://github.com/openbrewerydb/openbrewerydb) to suggest changes, add new breweries, or help maintain the dataset.
 

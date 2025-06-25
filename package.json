@@ -9,7 +9,9 @@
 		"start": "node dist/index.js",
 		"dev": "npx @modelcontextprotocol/inspector tsx src/index.ts",
 		"watch": "tsc --watch",
-		"test": "vitest --run"
+		"test": "vitest --run",
+		"lint": "eslint .",
+		"lint:fix": "eslint . --fix"
 	},
 	"keywords": [
 		"mcp",
@@ -29,7 +31,10 @@
 	"devDependencies": {
 		"@modelcontextprotocol/inspector": "^0.14.0",
 		"@types/node": "^20.0.0",
+		"@typescript-eslint/eslint-plugin": "^8.35.0",
+		"@typescript-eslint/parser": "^8.35.0",
 		"@vitest/ui": "^3.2.2",
+		"eslint": "^9.29.0",
 		"tsx": "^4.0.0",
 		"typescript": "^5.0.0",
 		"vitest": "^3.2.2"
