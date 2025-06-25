@@ -1,29 +1,37 @@
-# Workflow to create a release: build, test, and publish to npm
-name: Create Release
+name: 'Create Release'
 
 on:
   push:
-    tags:
-      - 'v*.*.*'
+    branches:
+      - main
 
 jobs:
-  build-test-publish:
+  bump-version:
+    name: 'Bump Version on main'
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v4
-      - name: Use Node.js 20.x
-        uses: actions/setup-node@v4
+      - name: 'Checkout source code'
+        uses: 'actions/checkout@v4'
         with:
-          node-version: 20.x
-          registry-url: 'https://registry.npmjs.org/'
+          ref: ${{ github.ref }}
       - name: Install dependencies
         run: npm ci
       - name: Run linter
         run: npm run lint
       - name: Run tests
         run: npm test
-      - name: Build the project
-        run: npm run build
+      - name: 'Automated Version Bump'
+        id: version-bump
+        uses: 'phips28/gh-action-bump-version@master'
+        with:
+          tag-prefix: 'v'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: 'Output Step'
+        env:
+          NEW_TAG: ${{ steps.version-bump.outputs.newTag }}
+        run: echo "new tag $NEW_TAG"
       - name: Publish to npm
         run: npm publish
         env:
